@@ -5,7 +5,7 @@
 ```
 name: CI/CD Workflow
 
-//on:
+on:
   push:
     branches:
       - main
