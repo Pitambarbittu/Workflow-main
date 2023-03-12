@@ -1,5 +1,7 @@
 # CI/CD Github Actions Workflow - Documentation
 
+> Continuous Integration/Continuous Deployment (CI/CD) is a software engineering practice that involves continuously building, testing, and deploying code changes to an application. GitHub Actions is a CI/CD tool that automates these processes within a GitHub repository.
+
 *Example of GitHub Actions workflow that demonstrates the CI/CD process:-*
 
 ```
