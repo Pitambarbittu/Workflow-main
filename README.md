@@ -5,7 +5,7 @@
 ```
 name: CI/CD Workflow
 
-on:
+//on:
   push:
     branches:
       - main
@@ -37,8 +37,8 @@ jobs:
 
 This workflow will:
 ---
-* Trigger on any push to the `main` branch
-* Run on an Ubuntu environment
+* Trigger on any push to the `main`/`master` branch
+* Run on an Ubuntu / windows environment
 * Checkout the code from the repository
 * Install dependencies using npm
 * Run tests using npm
