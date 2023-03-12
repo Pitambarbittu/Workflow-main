@@ -1,0 +1,25 @@
+name: My Github Workflow
+
+on:
+  push:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  my-job1:
+    runs-on: windows-latest
+
+    steps:
+      - name: set up python
+        uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+        with:
+          python-version: 3.8
+
+      - name: Installing Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      
