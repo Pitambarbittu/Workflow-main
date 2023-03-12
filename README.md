@@ -5,36 +5,50 @@
 *Example of GitHub Actions workflow that demonstrates the CI/CD process:-*
 
 ```
-name: CI/CD Workflow
-
 on:
   push:
     branches:
       - main
 
-jobs:
-  build:
+    paths: 
+
+    - 'factorial.py' 
+
+    - 'lint.py' 
+ 
+
+ jobs: 
+
+  build: 
+
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      - name: Install dependencies
-        run: npm install
+    steps: 
 
-      - name: Run tests
-        run: npm test
+    - uses: actions/checkout@v2 
 
-      - name: Build application
-        run: npm run build
+    - name: Set up Python 3.8 
 
-      - name: Deploy application
-        uses: heroku/actions@v3
-        with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: my-app
-          heroku_email: my-email@example.com
+      uses: actions/setup-python@v2 
+
+      with: 
+
+        python-version: 3.8 
+
+    - name: Install dependencies 
+
+      run: | 
+
+        python -m pip install --upgrade pip 
+
+        pip install pylint 
+
+     - name: Lint with pylint 
+
+      run: | 
+
+
+        python lint.py 
 ```
 
 This workflow will:
